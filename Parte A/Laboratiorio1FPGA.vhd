@@ -1,4 +1,6 @@
 library IEEE;
+
+
 use EE.STD_LOGIC_1164.ALL;
 
 entity circuito1 is
