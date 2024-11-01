@@ -2,6 +2,8 @@ library IEEE;
 use EE.STD_LOGIC_1164.ALL;
 
 entity circuito1 is
+
+
 port (SW1 : in std_logic;
 		SW2 : in std_logic;
 		SW3 : in std_logic;
