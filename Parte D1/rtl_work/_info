@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\juanm\Documents\Quartus\Lab 1 TyDD2 Meneghini\Parte D
+Eparted
+Z1 w1730919175
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\juanm\Documents\Quartus\Lab 1 TyDD2 Meneghini\Parte D
+Z5 8C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD.vhd
+Z6 FC:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD.vhd
+l0
+L21
+V<N69<2JlXPOoooKcX:`Fl2
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1730920662.909000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD.vhd|
+Z10 !s107 C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 UJYN?:[K_Zd;nzJ>f]YzV2
+!i10b 1
+Abehavior
+R2
+R3
+DEx4 work 6 parted 0 22 <N69<2JlXPOoooKcX:`Fl2
+l38
+L33
+V:]DXT_LNX`JPQ?P;Og0G^0
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 0[1;^7zVBbzd[`BdHJVYN2
+!i10b 1
+Etestbench_parted
+Z13 w1730920453
+R2
+R3
+R4
+Z14 8C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD_testbench.vhd
+Z15 FC:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD_testbench.vhd
+l0
+L4
+VkmoNeE2[Pl@[E@FB2FAg73
+!s100 g5MG3_<1VjjIGDd>hC@Yk2
+R7
+31
+!i10b 1
+Z16 !s108 1730920663.020000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD_testbench.vhd|
+Z18 !s107 C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte D/ParteD_testbench.vhd|
+R11
+R12
+Abehavior
+R2
+R3
+DEx4 work 16 testbench_parted 0 22 kmoNeE2[Pl@[E@FB2FAg73
+l31
+L7
+Vn>5RhKj<b8o`^_l0]CzSP2
+!s100 []2E>Wn5aAOEke40K16Wi1
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12
