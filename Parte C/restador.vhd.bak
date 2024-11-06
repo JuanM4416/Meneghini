@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity restador is
+
+port (A    : in  std_logic;
+      B    : in  std_logic;
+      Bin  : in  std_logic;
+      clk  : in  std_logic;
+      Bout : out std_logic;
+      dif  : out std_logic);
+		  
+end restador;
+
+architecture behavioral of restador is
+
+begin
+   
+    dif_int <= (A_int xor B_int) xor Bin_int;
+    Bout_int <= ((not A_int) and B_int) or ((not (A_int xor B_int)) and Bin_int);
+
+end behavioral;

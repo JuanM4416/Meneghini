@@ -1,0 +1,145 @@
+|restador4bits
+Bout <= restador:inst.Bout
+A3 => FFD:inst8.D
+clk => FFD:inst8.clk
+clk => FFD:inst20.clk
+clk => FFD:inst7.clk
+clk => FFD:inst19.clk
+clk => FFD:inst6.clk
+clk => FFD:inst18.clk
+clk => FFD:inst5.clk
+clk => FFD:inst17.clk
+clk => FFD:inst24.clk
+clk => FFD:inst23.clk
+clk => FFD:inst22.clk
+clk => FFD:inst21.clk
+B3 => FFD:inst20.D
+A2 => FFD:inst7.D
+B2 => FFD:inst19.D
+A1 => FFD:inst6.D
+B1 => FFD:inst18.D
+A0 => FFD:inst5.D
+B0 => FFD:inst17.D
+Bin => restador:inst11.Bin
+dif3 <= FFD:inst24.Q
+dif2 <= FFD:inst23.Q
+dif1 <= FFD:inst22.Q
+dif0 <= FFD:inst21.Q
+
+
+|restador4bits|restador:inst
+A => Bout.IN0
+A => Bout.IN0
+B => Bout.IN1
+B => Bout.IN1
+Bin => dif.IN1
+Bin => Bout.IN1
+Bout <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+dif <= dif.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst8
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst20
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|restador:inst9
+A => Bout.IN0
+A => Bout.IN0
+B => Bout.IN1
+B => Bout.IN1
+Bin => dif.IN1
+Bin => Bout.IN1
+Bout <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+dif <= dif.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst7
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst19
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|restador:inst10
+A => Bout.IN0
+A => Bout.IN0
+B => Bout.IN1
+B => Bout.IN1
+Bin => dif.IN1
+Bin => Bout.IN1
+Bout <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+dif <= dif.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst6
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst18
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|restador:inst11
+A => Bout.IN0
+A => Bout.IN0
+B => Bout.IN1
+B => Bout.IN1
+Bin => dif.IN1
+Bin => Bout.IN1
+Bout <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+dif <= dif.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst5
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst17
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst24
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst23
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst22
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador4bits|FFD:inst21
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
