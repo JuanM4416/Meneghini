@@ -1,0 +1,43 @@
+|restador
+A => FFD:D1.D
+B => FFD:D2.D
+Bin => FFD:D3.D
+clk => FFD:D1.clk
+clk => FFD:D2.clk
+clk => FFD:D3.clk
+clk => FFD:D4.clk
+clk => FFD:D5.clk
+Bout <= FFD:D4.Q
+dif <= FFD:D5.Q
+
+
+|restador|FFD:D1
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador|FFD:D2
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador|FFD:D3
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador|FFD:D4
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|restador|FFD:D5
+D => Q~reg0.DATAIN
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

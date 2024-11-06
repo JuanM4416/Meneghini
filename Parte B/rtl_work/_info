@@ -1,0 +1,122 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\juanm\Documents\Quartus\Lab 1 TyDD2 Meneghini\Parte B
+Effd
+Z1 w1730853521
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\juanm\Documents\Quartus\Lab 1 TyDD2 Meneghini\Parte B
+Z7 8C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/FFD.vhd
+Z8 FC:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/FFD.vhd
+l0
+L7
+VO5EJY5XLnz[UD`6O^7kzf2
+Z9 OV;C;10.1d;51
+31
+Z10 !s108 1730857881.300000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/FFD.vhd|
+Z12 !s107 C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/FFD.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 D5m82OZdGkGD[[7=RTjB00
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 3 ffd 0 22 O5EJY5XLnz[UD`6O^7kzf2
+l18
+L16
+VU]m^TK]deVJWB?efzdWd:1
+R9
+31
+R10
+R11
+R12
+R13
+R14
+!s100 ET6UJ3ROZKfRDkclWoKRR0
+!i10b 1
+Erestador
+Z15 w1730856436
+R2
+R3
+R4
+R5
+R6
+Z16 8C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador.vhd
+Z17 FC:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador.vhd
+l0
+L6
+V:D;ISaG;GPkjY^j0`MQc83
+R9
+31
+Z18 !s108 1730857881.369000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador.vhd|
+Z20 !s107 C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador.vhd|
+R13
+R14
+!s100 OlZoVYoAmIaI1?A`_n@ZY1
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 8 restador 0 22 :D;ISaG;GPkjY^j0`MQc83
+l27
+L17
+VS6G^W1;S^1=Aka@@Xlj][3
+R9
+31
+R18
+R19
+R20
+R13
+R14
+!s100 eZC:l0oP:BUngh8f9E6GP3
+!i10b 1
+Erestador_testbench
+Z21 w1730857390
+R2
+R3
+R4
+R5
+R6
+Z22 8C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador_testbench.vhd
+Z23 FC:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador_testbench.vhd
+l0
+L6
+ViX?l<YD5gPDi?UJPI63W;3
+!s100 F41m1VnMO`lg<l9YiOVRi3
+R9
+31
+!i10b 1
+Z24 !s108 1730857881.417000
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador_testbench.vhd|
+Z26 !s107 C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte B/restador_testbench.vhd|
+R13
+R14
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 18 restador_testbench 0 22 iX?l<YD5gPDi?UJPI63W;3
+l33
+L10
+VmN3DS`hd[TZF7k5h1SW2O3
+!s100 e>b>Aoh03Q7QcfUT7>J6K1
+R9
+31
+!i10b 1
+R24
+R25
+R26
+R13
+R14

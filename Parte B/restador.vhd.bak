@@ -1,0 +1,43 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+entity restador is
+
+port (A    : in  std_logic;
+      B    : in  std_logic;
+		Bin  : in  std_logic;
+		clk  : in  std_logic;
+		Bout : out std_logic
+      dif  : out std_logic);
+		
+end restador;
+
+architecture behavioral of restador is
+
+component FFD
+port (D    : in std_logic;
+		clk  : in std;_logic;
+		Q    : out std_logic);
+end component;
+
+signal 	(A'    : std_logic;
+			 B'    : std_logic;
+			 Bin'  : std_logic;
+			 Bout' : std_logic
+			 dif'  : std_logic);
+
+begin
+   
+	D <= (A xor B) xor Bin;
+	Bout <= ((not A) and B) or ((not(A xor B)) and Bin); 
+	
+	D1 : FFD port map (A, clk, A');
+	D2 : FFD port map (B, clk, B');
+	D3 : FFD port map (Bin, clk, Bin');
+	D4 : FFD port map (Bout', clk, Bout);
+	D4 : FFD port map (dif', clk, dif);
+	
+end behavioral;
