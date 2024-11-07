@@ -1,0 +1,1020 @@
+TimeQuest Timing Analyzer report for ParteE
+Thu Nov 07 09:11:18 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'SCL'
+ 13. Slow 1200mV 85C Model Hold: 'SCL'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'SCL'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Slow 1200mV 85C Model Metastability Report
+ 22. Slow 1200mV 0C Model Fmax Summary
+ 23. Slow 1200mV 0C Model Setup Summary
+ 24. Slow 1200mV 0C Model Hold Summary
+ 25. Slow 1200mV 0C Model Recovery Summary
+ 26. Slow 1200mV 0C Model Removal Summary
+ 27. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 28. Slow 1200mV 0C Model Setup: 'SCL'
+ 29. Slow 1200mV 0C Model Hold: 'SCL'
+ 30. Slow 1200mV 0C Model Minimum Pulse Width: 'SCL'
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Propagation Delay
+ 36. Minimum Propagation Delay
+ 37. Slow 1200mV 0C Model Metastability Report
+ 38. Fast 1200mV 0C Model Setup Summary
+ 39. Fast 1200mV 0C Model Hold Summary
+ 40. Fast 1200mV 0C Model Recovery Summary
+ 41. Fast 1200mV 0C Model Removal Summary
+ 42. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 43. Fast 1200mV 0C Model Setup: 'SCL'
+ 44. Fast 1200mV 0C Model Hold: 'SCL'
+ 45. Fast 1200mV 0C Model Minimum Pulse Width: 'SCL'
+ 46. Setup Times
+ 47. Hold Times
+ 48. Clock to Output Times
+ 49. Minimum Clock to Output Times
+ 50. Propagation Delay
+ 51. Minimum Propagation Delay
+ 52. Fast 1200mV 0C Model Metastability Report
+ 53. Multicorner Timing Analysis Summary
+ 54. Setup Times
+ 55. Hold Times
+ 56. Clock to Output Times
+ 57. Minimum Clock to Output Times
+ 58. Progagation Delay
+ 59. Minimum Progagation Delay
+ 60. Board Trace Model Assignments
+ 61. Input Transition Times
+ 62. Slow Corner Signal Integrity Metrics
+ 63. Fast Corner Signal Integrity Metrics
+ 64. Setup Transfers
+ 65. Hold Transfers
+ 66. Report TCCS
+ 67. Report RSKM
+ 68. Unconstrained Paths
+ 69. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ParteE                                                            ;
+; Device Family      ; Cyclone III                                                       ;
+; Device Name        ; EP3C55F780C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Enabled                                                           ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; SCL        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SCL } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 710.23 MHz ; 250.0 MHz       ; SCL        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; SCL   ; -0.408 ; -0.804             ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; SCL   ; 0.407 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; SCL   ; -3.000 ; -10.710                          ;
++-------+--------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'SCL'                                                                         ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -0.408 ; fstate.DAT   ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.076     ; 1.330      ;
+; -0.406 ; fstate.DIR   ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.076     ; 1.328      ;
+; -0.248 ; fstate.IDLE  ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.076     ; 1.170      ;
+; -0.210 ; fstate.DIR   ; fstate.RW    ; SCL          ; SCL         ; 1.000        ; -0.076     ; 1.132      ;
+; -0.157 ; fstate.IDLE  ; fstate.START ; SCL          ; SCL         ; 1.000        ; -0.076     ; 1.079      ;
+; -0.029 ; fstate.RW    ; fstate.ACK   ; SCL          ; SCL         ; 1.000        ; -0.076     ; 0.951      ;
+; 0.122  ; fstate.ACK   ; fstate.DAT   ; SCL          ; SCL         ; 1.000        ; -0.076     ; 0.800      ;
+; 0.125  ; fstate.START ; fstate.DIR   ; SCL          ; SCL         ; 1.000        ; -0.076     ; 0.797      ;
+; 0.188  ; fstate.DIR   ; fstate.DIR   ; SCL          ; SCL         ; 1.000        ; -0.076     ; 0.734      ;
+; 0.188  ; fstate.DAT   ; fstate.DAT   ; SCL          ; SCL         ; 1.000        ; -0.076     ; 0.734      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'SCL'                                                                         ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.407 ; fstate.DAT   ; fstate.DAT   ; SCL          ; SCL         ; 0.000        ; 0.076      ; 0.669      ;
+; 0.407 ; fstate.DIR   ; fstate.DIR   ; SCL          ; SCL         ; 0.000        ; 0.076      ; 0.669      ;
+; 0.425 ; fstate.START ; fstate.DIR   ; SCL          ; SCL         ; 0.000        ; 0.076      ; 0.687      ;
+; 0.442 ; fstate.ACK   ; fstate.DAT   ; SCL          ; SCL         ; 0.000        ; 0.076      ; 0.704      ;
+; 0.556 ; fstate.RW    ; fstate.ACK   ; SCL          ; SCL         ; 0.000        ; 0.076      ; 0.818      ;
+; 0.737 ; fstate.IDLE  ; fstate.START ; SCL          ; SCL         ; 0.000        ; 0.076      ; 0.999      ;
+; 0.758 ; fstate.DIR   ; fstate.RW    ; SCL          ; SCL         ; 0.000        ; 0.076      ; 1.020      ;
+; 0.805 ; fstate.IDLE  ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.076      ; 1.067      ;
+; 0.926 ; fstate.DIR   ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.076      ; 1.188      ;
+; 0.926 ; fstate.DAT   ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.076      ; 1.188      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'SCL'                                                           ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; SCL   ; Rise       ; SCL                       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.ACK                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.DAT                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.DIR                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.IDLE               ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.RW                 ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.START              ;
+; 0.261  ; 0.449        ; 0.188          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.ACK                ;
+; 0.261  ; 0.449        ; 0.188          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DAT                ;
+; 0.261  ; 0.449        ; 0.188          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DIR                ;
+; 0.261  ; 0.449        ; 0.188          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.IDLE               ;
+; 0.261  ; 0.449        ; 0.188          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.RW                 ;
+; 0.261  ; 0.449        ; 0.188          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.START              ;
+; 0.330  ; 0.550        ; 0.220          ; High Pulse Width ; SCL   ; Rise       ; fstate.ACK                ;
+; 0.330  ; 0.550        ; 0.220          ; High Pulse Width ; SCL   ; Rise       ; fstate.DAT                ;
+; 0.330  ; 0.550        ; 0.220          ; High Pulse Width ; SCL   ; Rise       ; fstate.DIR                ;
+; 0.330  ; 0.550        ; 0.220          ; High Pulse Width ; SCL   ; Rise       ; fstate.IDLE               ;
+; 0.330  ; 0.550        ; 0.220          ; High Pulse Width ; SCL   ; Rise       ; fstate.RW                 ;
+; 0.330  ; 0.550        ; 0.220          ; High Pulse Width ; SCL   ; Rise       ; fstate.START              ;
+; 0.395  ; 0.395        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~input|o               ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~inputclkctrl|inclk[0] ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~inputclkctrl|outclk   ;
+; 0.413  ; 0.413        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.ACK|clk            ;
+; 0.413  ; 0.413        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DAT|clk            ;
+; 0.413  ; 0.413        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DIR|clk            ;
+; 0.413  ; 0.413        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.IDLE|clk           ;
+; 0.413  ; 0.413        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.RW|clk             ;
+; 0.413  ; 0.413        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.START|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~input|i               ;
+; 0.585  ; 0.585        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.ACK|clk            ;
+; 0.585  ; 0.585        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.DAT|clk            ;
+; 0.585  ; 0.585        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.DIR|clk            ;
+; 0.585  ; 0.585        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.IDLE|clk           ;
+; 0.585  ; 0.585        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.RW|clk             ;
+; 0.585  ; 0.585        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.START|clk          ;
+; 0.591  ; 0.591        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~inputclkctrl|inclk[0] ;
+; 0.591  ; 0.591        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~inputclkctrl|outclk   ;
+; 0.605  ; 0.605        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~input|o               ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Fdat      ; SCL        ; 2.107 ; 2.461 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; 1.908 ; 2.309 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; 1.861 ; 2.225 ; Rise       ; SCL             ;
+; reset     ; SCL        ; 1.385 ; 1.739 ; Rise       ; SCL             ;
+; soy       ; SCL        ; 1.778 ; 2.085 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Fdat      ; SCL        ; -1.112 ; -1.421 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; -1.095 ; -1.417 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; -1.063 ; -1.384 ; Rise       ; SCL             ;
+; reset     ; SCL        ; -0.856 ; -1.216 ; Rise       ; SCL             ;
+; soy       ; SCL        ; -0.550 ; -0.874 ; Rise       ; SCL             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 6.412 ; 6.400 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 6.996 ; 7.029 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 6.721 ; 6.724 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 6.266 ; 6.253 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 6.797 ; 6.807 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 6.566 ; 6.567 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 6.836 ; 7.276 ;    ;
+; reset      ; Hdat        ;    ; 6.669 ; 7.099 ;    ;
+; reset      ; Hdir        ;    ; 6.542 ; 6.974 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 6.648 ; 7.073 ;    ;
+; reset      ; Hdat        ;    ; 6.518 ; 6.934 ;    ;
+; reset      ; Hdir        ;    ; 6.397 ; 6.813 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 789.89 MHz ; 250.0 MHz       ; SCL        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; SCL   ; -0.266 ; -0.392            ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; SCL   ; 0.359 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; SCL   ; -3.000 ; -10.710                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'SCL'                                                                          ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -0.266 ; fstate.DAT   ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.067     ; 1.198      ;
+; -0.263 ; fstate.DIR   ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.067     ; 1.195      ;
+; -0.120 ; fstate.IDLE  ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.067     ; 1.052      ;
+; -0.081 ; fstate.DIR   ; fstate.RW    ; SCL          ; SCL         ; 1.000        ; -0.067     ; 1.013      ;
+; -0.045 ; fstate.IDLE  ; fstate.START ; SCL          ; SCL         ; 1.000        ; -0.067     ; 0.977      ;
+; 0.075  ; fstate.RW    ; fstate.ACK   ; SCL          ; SCL         ; 1.000        ; -0.067     ; 0.857      ;
+; 0.209  ; fstate.START ; fstate.DIR   ; SCL          ; SCL         ; 1.000        ; -0.067     ; 0.723      ;
+; 0.213  ; fstate.ACK   ; fstate.DAT   ; SCL          ; SCL         ; 1.000        ; -0.067     ; 0.719      ;
+; 0.273  ; fstate.DIR   ; fstate.DIR   ; SCL          ; SCL         ; 1.000        ; -0.067     ; 0.659      ;
+; 0.273  ; fstate.DAT   ; fstate.DAT   ; SCL          ; SCL         ; 1.000        ; -0.067     ; 0.659      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'SCL'                                                                          ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.359 ; fstate.DAT   ; fstate.DAT   ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.597      ;
+; 0.359 ; fstate.DIR   ; fstate.DIR   ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.597      ;
+; 0.386 ; fstate.START ; fstate.DIR   ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.624      ;
+; 0.409 ; fstate.ACK   ; fstate.DAT   ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.647      ;
+; 0.512 ; fstate.RW    ; fstate.ACK   ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.750      ;
+; 0.682 ; fstate.IDLE  ; fstate.START ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.920      ;
+; 0.706 ; fstate.DIR   ; fstate.RW    ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.944      ;
+; 0.746 ; fstate.IDLE  ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.067      ; 0.984      ;
+; 0.855 ; fstate.DAT   ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.067      ; 1.093      ;
+; 0.856 ; fstate.DIR   ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.067      ; 1.094      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'SCL'                                                            ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; SCL   ; Rise       ; SCL                       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.ACK                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.DAT                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.DIR                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.IDLE               ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.RW                 ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; SCL   ; Rise       ; fstate.START              ;
+; 0.250  ; 0.436        ; 0.186          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.ACK                ;
+; 0.250  ; 0.436        ; 0.186          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DAT                ;
+; 0.250  ; 0.436        ; 0.186          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DIR                ;
+; 0.250  ; 0.436        ; 0.186          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.IDLE               ;
+; 0.250  ; 0.436        ; 0.186          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.RW                 ;
+; 0.250  ; 0.436        ; 0.186          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.START              ;
+; 0.344  ; 0.562        ; 0.218          ; High Pulse Width ; SCL   ; Rise       ; fstate.ACK                ;
+; 0.344  ; 0.562        ; 0.218          ; High Pulse Width ; SCL   ; Rise       ; fstate.DAT                ;
+; 0.344  ; 0.562        ; 0.218          ; High Pulse Width ; SCL   ; Rise       ; fstate.DIR                ;
+; 0.344  ; 0.562        ; 0.218          ; High Pulse Width ; SCL   ; Rise       ; fstate.IDLE               ;
+; 0.344  ; 0.562        ; 0.218          ; High Pulse Width ; SCL   ; Rise       ; fstate.RW                 ;
+; 0.344  ; 0.562        ; 0.218          ; High Pulse Width ; SCL   ; Rise       ; fstate.START              ;
+; 0.395  ; 0.395        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~input|o               ;
+; 0.398  ; 0.398        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.ACK|clk            ;
+; 0.398  ; 0.398        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DAT|clk            ;
+; 0.398  ; 0.398        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DIR|clk            ;
+; 0.398  ; 0.398        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.IDLE|clk           ;
+; 0.398  ; 0.398        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.RW|clk             ;
+; 0.398  ; 0.398        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.START|clk          ;
+; 0.401  ; 0.401        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~inputclkctrl|inclk[0] ;
+; 0.401  ; 0.401        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~inputclkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~input|i               ;
+; 0.599  ; 0.599        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~inputclkctrl|inclk[0] ;
+; 0.599  ; 0.599        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~inputclkctrl|outclk   ;
+; 0.602  ; 0.602        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.ACK|clk            ;
+; 0.602  ; 0.602        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.DAT|clk            ;
+; 0.602  ; 0.602        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.DIR|clk            ;
+; 0.602  ; 0.602        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.IDLE|clk           ;
+; 0.602  ; 0.602        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.RW|clk             ;
+; 0.602  ; 0.602        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.START|clk          ;
+; 0.605  ; 0.605        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~input|o               ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Fdat      ; SCL        ; 1.851 ; 2.094 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; 1.655 ; 1.959 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; 1.608 ; 1.877 ; Rise       ; SCL             ;
+; reset     ; SCL        ; 1.165 ; 1.446 ; Rise       ; SCL             ;
+; soy       ; SCL        ; 1.520 ; 1.772 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Fdat      ; SCL        ; -0.936 ; -1.174 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; -0.919 ; -1.158 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; -0.887 ; -1.131 ; Rise       ; SCL             ;
+; reset     ; SCL        ; -0.699 ; -0.976 ; Rise       ; SCL             ;
+; soy       ; SCL        ; -0.422 ; -0.674 ; Rise       ; SCL             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 6.075 ; 6.027 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 6.630 ; 6.594 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 6.389 ; 6.323 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 5.944 ; 5.896 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 6.447 ; 6.397 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 6.248 ; 6.184 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 6.350 ; 6.722 ;    ;
+; reset      ; Hdat        ;    ; 6.189 ; 6.578 ;    ;
+; reset      ; Hdir        ;    ; 6.080 ; 6.476 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 6.191 ; 6.546 ;    ;
+; reset      ; Hdat        ;    ; 6.059 ; 6.434 ;    ;
+; reset      ; Hdir        ;    ; 5.956 ; 6.337 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; SCL   ; 0.317 ; 0.000              ;
++-------+-------+--------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; SCL   ; 0.184 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; SCL   ; -3.000 ; -9.336                          ;
++-------+--------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'SCL'                                                                         ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.317 ; fstate.DAT   ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.631      ;
+; 0.321 ; fstate.DIR   ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.627      ;
+; 0.387 ; fstate.IDLE  ; fstate.IDLE  ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.561      ;
+; 0.407 ; fstate.DIR   ; fstate.RW    ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.541      ;
+; 0.442 ; fstate.IDLE  ; fstate.START ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.506      ;
+; 0.503 ; fstate.RW    ; fstate.ACK   ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.445      ;
+; 0.569 ; fstate.ACK   ; fstate.DAT   ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.379      ;
+; 0.579 ; fstate.START ; fstate.DIR   ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.369      ;
+; 0.598 ; fstate.DIR   ; fstate.DIR   ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.350      ;
+; 0.598 ; fstate.DAT   ; fstate.DAT   ; SCL          ; SCL         ; 1.000        ; -0.039     ; 0.350      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'SCL'                                                                          ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.184 ; fstate.DAT   ; fstate.DAT   ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.307      ;
+; 0.184 ; fstate.DIR   ; fstate.DIR   ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.307      ;
+; 0.195 ; fstate.START ; fstate.DIR   ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.318      ;
+; 0.196 ; fstate.ACK   ; fstate.DAT   ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.319      ;
+; 0.250 ; fstate.RW    ; fstate.ACK   ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.373      ;
+; 0.328 ; fstate.IDLE  ; fstate.START ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.451      ;
+; 0.335 ; fstate.DIR   ; fstate.RW    ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.458      ;
+; 0.358 ; fstate.IDLE  ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.481      ;
+; 0.414 ; fstate.DIR   ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.537      ;
+; 0.416 ; fstate.DAT   ; fstate.IDLE  ; SCL          ; SCL         ; 0.000        ; 0.039      ; 0.539      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'SCL'                                                            ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; SCL   ; Rise       ; SCL                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SCL   ; Rise       ; fstate.ACK                ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SCL   ; Rise       ; fstate.DAT                ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SCL   ; Rise       ; fstate.DIR                ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SCL   ; Rise       ; fstate.IDLE               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SCL   ; Rise       ; fstate.RW                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; SCL   ; Rise       ; fstate.START              ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.ACK                ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DAT                ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DIR                ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.IDLE               ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.RW                 ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.START              ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~input|o               ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.ACK|clk            ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DAT|clk            ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.DIR|clk            ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.IDLE|clk           ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.RW|clk             ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; fstate.START|clk          ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~inputclkctrl|inclk[0] ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~inputclkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SCL   ; Rise       ; SCL~input|i               ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; SCL   ; Rise       ; fstate.ACK                ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; SCL   ; Rise       ; fstate.DAT                ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; SCL   ; Rise       ; fstate.DIR                ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; SCL   ; Rise       ; fstate.IDLE               ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; SCL   ; Rise       ; fstate.RW                 ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; SCL   ; Rise       ; fstate.START              ;
+; 0.864  ; 0.864        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~inputclkctrl|inclk[0] ;
+; 0.864  ; 0.864        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~inputclkctrl|outclk   ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.ACK|clk            ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.DAT|clk            ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.DIR|clk            ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.IDLE|clk           ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.RW|clk             ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; fstate.START|clk          ;
+; 0.877  ; 0.877        ; 0.000          ; High Pulse Width ; SCL   ; Rise       ; SCL~input|o               ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Fdat      ; SCL        ; 0.974 ; 1.593 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; 0.909 ; 1.527 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; 0.892 ; 1.498 ; Rise       ; SCL             ;
+; reset     ; SCL        ; 0.662 ; 1.225 ; Rise       ; SCL             ;
+; soy       ; SCL        ; 0.847 ; 1.364 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Fdat      ; SCL        ; -0.508 ; -1.064 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; -0.531 ; -1.099 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; -0.521 ; -1.079 ; Rise       ; SCL             ;
+; reset     ; SCL        ; -0.395 ; -0.955 ; Rise       ; SCL             ;
+; soy       ; SCL        ; -0.251 ; -0.789 ; Rise       ; SCL             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 3.409 ; 3.494 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 3.689 ; 3.828 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 3.548 ; 3.657 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 3.334 ; 3.415 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 3.591 ; 3.715 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 3.470 ; 3.576 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 3.696 ; 4.218 ;    ;
+; reset      ; Hdat        ;    ; 3.643 ; 4.142 ;    ;
+; reset      ; Hdir        ;    ; 3.564 ; 4.077 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 3.594 ; 4.112 ;    ;
+; reset      ; Hdat        ;    ; 3.562 ; 4.056 ;    ;
+; reset      ; Hdir        ;    ; 3.488 ; 3.994 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.408 ; 0.184 ; N/A      ; N/A     ; -3.000              ;
+;  SCL             ; -0.408 ; 0.184 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -0.804 ; 0.0   ; 0.0      ; 0.0     ; -10.71              ;
+;  SCL             ; -0.804 ; 0.000 ; N/A      ; N/A     ; -10.710             ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Fdat      ; SCL        ; 2.107 ; 2.461 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; 1.908 ; 2.309 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; 1.861 ; 2.225 ; Rise       ; SCL             ;
+; reset     ; SCL        ; 1.385 ; 1.739 ; Rise       ; SCL             ;
+; soy       ; SCL        ; 1.778 ; 2.085 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Fdat      ; SCL        ; -0.508 ; -1.064 ; Rise       ; SCL             ;
+; Fdir      ; SCL        ; -0.531 ; -1.099 ; Rise       ; SCL             ;
+; SDA       ; SCL        ; -0.521 ; -1.079 ; Rise       ; SCL             ;
+; reset     ; SCL        ; -0.395 ; -0.955 ; Rise       ; SCL             ;
+; soy       ; SCL        ; -0.251 ; -0.674 ; Rise       ; SCL             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 6.412 ; 6.400 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 6.996 ; 7.029 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 6.721 ; 6.724 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Hack      ; SCL        ; 3.334 ; 3.415 ; Rise       ; SCL             ;
+; Hdat      ; SCL        ; 3.591 ; 3.715 ; Rise       ; SCL             ;
+; Hdir      ; SCL        ; 3.470 ; 3.576 ; Rise       ; SCL             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 6.836 ; 7.276 ;    ;
+; reset      ; Hdat        ;    ; 6.669 ; 7.099 ;    ;
+; reset      ; Hdir        ;    ; 6.542 ; 6.974 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; reset      ; Hack        ;    ; 3.594 ; 4.112 ;    ;
+; reset      ; Hdat        ;    ; 3.562 ; 4.056 ;    ;
+; reset      ; Hdir        ;    ; 3.488 ; 3.994 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Hdir          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Hdat          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Hack          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; Fdir                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SCL                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; Fdat                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SDA                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; soy                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Hdir          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.66e-07 V                   ; 2.35 V              ; -0.00828 V          ; 0.118 V                              ; 0.032 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.66e-07 V                  ; 2.35 V             ; -0.00828 V         ; 0.118 V                             ; 0.032 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; Hdat          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.66e-07 V                   ; 2.35 V              ; -0.00828 V          ; 0.118 V                              ; 0.032 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.66e-07 V                  ; 2.35 V             ; -0.00828 V         ; 0.118 V                             ; 0.032 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; Hack          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.43e-07 V                   ; 2.35 V              ; -0.00795 V          ; 0.123 V                              ; 0.028 V                              ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.43e-07 V                  ; 2.35 V             ; -0.00795 V         ; 0.123 V                             ; 0.028 V                             ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.92e-07 V                   ; 2.35 V              ; -0.0133 V           ; 0.084 V                              ; 0.028 V                              ; 4.31e-10 s                  ; 3.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.92e-07 V                  ; 2.35 V             ; -0.0133 V          ; 0.084 V                             ; 0.028 V                             ; 4.31e-10 s                 ; 3.59e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.8e-07 V                    ; 2.35 V              ; -0.00679 V          ; 0.09 V                               ; 0.045 V                              ; 6.2e-10 s                   ; 7.91e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.8e-07 V                   ; 2.35 V             ; -0.00679 V         ; 0.09 V                              ; 0.045 V                             ; 6.2e-10 s                  ; 7.91e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Hdir          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; Hdat          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; Hack          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.02e-08 V                   ; 2.71 V              ; -0.0354 V           ; 0.174 V                              ; 0.098 V                              ; 2.73e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.02e-08 V                  ; 2.71 V             ; -0.0354 V          ; 0.174 V                             ; 0.098 V                             ; 2.73e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.2e-08 V                    ; 2.74 V              ; -0.061 V            ; 0.159 V                              ; 0.078 V                              ; 2.7e-10 s                   ; 2.2e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.2e-08 V                   ; 2.74 V             ; -0.061 V           ; 0.159 V                             ; 0.078 V                             ; 2.7e-10 s                  ; 2.2e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.52e-08 V                   ; 2.7 V               ; -0.0121 V           ; 0.274 V                              ; 0.034 V                              ; 3.18e-10 s                  ; 4.96e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.52e-08 V                  ; 2.7 V              ; -0.0121 V          ; 0.274 V                             ; 0.034 V                             ; 3.18e-10 s                 ; 4.96e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SCL        ; SCL      ; 10       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SCL        ; SCL      ; 10       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 18    ; 18   ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 6     ; 6    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 07 09:11:16 2024
+Info: Command: quartus_sta ParteE -c ParteE
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ParteE.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SCL SCL
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.408
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.408        -0.804 SCL 
+Info (332146): Worst-case hold slack is 0.407
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.407         0.000 SCL 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -10.710 SCL 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.266
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.266        -0.392 SCL 
+Info (332146): Worst-case hold slack is 0.359
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.359         0.000 SCL 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -10.710 SCL 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 0.317
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.317         0.000 SCL 
+Info (332146): Worst-case hold slack is 0.184
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.184         0.000 SCL 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000        -9.336 SCL 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4609 megabytes
+    Info: Processing ended: Thu Nov 07 09:11:18 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

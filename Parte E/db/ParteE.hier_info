@@ -1,0 +1,27 @@
+|maquina
+reset => reg_fstate.START.OUTPUTSELECT
+reset => reg_fstate.DIR.OUTPUTSELECT
+reset => reg_fstate.RW.OUTPUTSELECT
+reset => reg_fstate.ACK.OUTPUTSELECT
+reset => reg_fstate.DAT.OUTPUTSELECT
+reset => reg_fstate.IDLE.OUTPUTSELECT
+reset => Hdir.OUTPUTSELECT
+reset => Hdat.OUTPUTSELECT
+reset => Hack.OUTPUTSELECT
+SCL => fstate~1.DATAIN
+SDA => reg_fstate.DATAB
+SDA => Selector2.IN3
+soy => process_1.IN0
+soy => process_1.IN0
+Fdir => process_1.IN1
+Fdir => process_1.IN1
+Fdir => reg_fstate.OUTPUTSELECT
+Fdir => reg_fstate.OUTPUTSELECT
+Fdir => reg_fstate.OUTPUTSELECT
+Fdat => Selector1.IN2
+Fdat => Selector2.IN2
+Hdir <= Hdir.DB_MAX_OUTPUT_PORT_TYPE
+Hdat <= Hdat.DB_MAX_OUTPUT_PORT_TYPE
+Hack <= Hack.DB_MAX_OUTPUT_PORT_TYPE
+
+

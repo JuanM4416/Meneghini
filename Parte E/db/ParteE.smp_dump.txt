@@ -1,0 +1,9 @@
+
+State Machine - |maquina|fstate
+Name fstate.IDLE fstate.DAT fstate.ACK fstate.RW fstate.DIR fstate.START 
+fstate.START 0 0 0 0 0 0 
+fstate.DIR 0 0 0 0 1 1 
+fstate.RW 0 0 0 1 0 1 
+fstate.ACK 0 0 1 0 0 1 
+fstate.DAT 0 1 0 0 0 1 
+fstate.IDLE 1 0 0 0 0 1 

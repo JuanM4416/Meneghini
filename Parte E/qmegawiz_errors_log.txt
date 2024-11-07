@@ -1,0 +1,13 @@
+
+
+C:/Users/juanm/Documents/Quartus/Lab 1 TyDD2 Meneghini/Parte E/circuito.vhd
+
+Nov 07 07AM:41:46>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+circuito.bdf
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
